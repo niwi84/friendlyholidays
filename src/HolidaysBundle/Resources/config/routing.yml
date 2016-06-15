@@ -1,0 +1,3 @@
+holidays_homepage:
+    path:     /
+    defaults: { _controller: HolidaysBundle:Default:index }
