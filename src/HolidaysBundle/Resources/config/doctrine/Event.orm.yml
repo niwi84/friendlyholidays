@@ -79,4 +79,15 @@ HolidaysBundle\Entity\Event:
             joinColumn:
                 name: event_userid
                 referenceColumnName: id
+    manyToMany:
+        participants:
+            targetEntity: HolidaysBundle\Entity\User
+            joinTable:
+                name: participants
+                joinColumns:
+                    event_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    user_id:
+                        referencedColumnName: id
     lifecycleCallbacks: {  }

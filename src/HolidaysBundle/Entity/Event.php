@@ -27,6 +27,15 @@ class Event
         return $this->eventUserId;
     }
 
+    private $participants;
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->participants = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
     ///////////////////////
     // GENERATED CODE
     /**
