@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Spend</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ spend.id }}</td>
+            </tr>
+            <tr>
+                <th>Spendtype</th>
+                <td>{{ spend.spendType }}</td>
+            </tr>
+            <tr>
+                <th>Spenddate</th>
+                <td>{% if spend.spendDate %}{{ spend.spendDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Spendperso</th>
+                <td>{{ spend.spendPerso }}</td>
+            </tr>
+            <tr>
+                <th>Spendgroup</th>
+                <td>{{ spend.spendGroup }}</td>
+            </tr>
+            <tr>
+                <th>Spendgroup2</th>
+                <td>{% if spend.spendGroup2 %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Spendphoto</th>
+                <td>{{ spend.spendPhoto }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('spend_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('spend_edit', { 'id': spend.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Spend list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Spendtype</th>
+                <th>Spenddate</th>
+                <th>Spendperso</th>
+                <th>Spendgroup</th>
+                <th>Spendgroup2</th>
+                <th>Spendphoto</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for spend in spends %}
+            <tr>
+                <td><a href="{{ path('spend_show', { 'id': spend.id }) }}">{{ spend.id }}</a></td>
+                <td>{{ spend.spendType }}</td>
+                <td>{% if spend.spendDate %}{{ spend.spendDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ spend.spendPerso }}</td>
+                <td>{{ spend.spendGroup }}</td>
+                <td>{% if spend.spendGroup2 %}Yes{% else %}No{% endif %}</td>
+                <td>{{ spend.spendPhoto }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('spend_show', { 'id': spend.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('spend_edit', { 'id': spend.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('spend_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

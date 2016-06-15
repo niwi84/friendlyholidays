@@ -1,5 +1,10 @@
 holidays:
     resource: "@HolidaysBundle/Resources/config/routing.yml"
     prefix:   /
+
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+holidays_spend:
+    resource: "@HolidaysBundle/Resources/config/routing/spend.yml"
+    prefix:   /spend

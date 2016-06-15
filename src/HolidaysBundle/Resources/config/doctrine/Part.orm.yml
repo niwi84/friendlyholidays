@@ -1,0 +1,32 @@
+HolidaysBundle\Entity\Part:
+    type: entity
+    table: null
+    repositoryClass: HolidaysBundle\Repository\PartRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        partComment:
+            type: text
+            nullable: true
+            column: part_comment
+        partPhoto:
+            type: string
+            length: '20'
+            nullable: true
+            column: part_photo
+    manyToOne:
+        partUserId:
+            targetEntity: HolidaysBundle\Entity\User
+            joinColumn:
+                name: part_userid
+                referenceColumnName: id
+        partEventId:
+            targetEntity: HolidaysBundle\Entity\Event
+            joinColumn:
+                name: part_eventid
+                referenceColumnName: id
+    lifecycleCallbacks: {  }

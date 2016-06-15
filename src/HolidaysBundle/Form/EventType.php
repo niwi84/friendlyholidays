@@ -32,7 +32,7 @@ class EventType extends AbstractType
             ->add('eventPhoto5')
         ;
     }
-    
+
     /**
      * @param OptionsResolver $resolver
      */

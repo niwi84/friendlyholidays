@@ -1,0 +1,49 @@
+HolidaysBundle\Entity\Spend:
+    type: entity
+    table: null
+    repositoryClass: HolidaysBundle\Repository\SpendRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        spendType:
+            type: string
+            length: '50'
+            column: spend_type
+        spendDate:
+            type: datetime
+            column: spend_date
+        spendPerso:
+            type: decimal
+            precision: '9'
+            scale: '2'
+            column: spend_perso
+        spendGroup:
+            type: decimal
+            precision: '9'
+            scale: '2'
+            column: spend_group
+        spendGroup2:
+            type: boolean
+            nullable: true
+            column: spend_group2
+        spendPhoto:
+            type: string
+            length: '20'
+            nullable: true
+            column: spend_photo
+    manyToOne:
+        spendUserId:
+            targetEntity: HolidaysBundle\Entity\User
+            joinColumn:
+                name: spend_userid
+                referenceColumnName: id
+        spendEventId:
+            targetEntity: HolidaysBundle\Entity\Event
+            joinColumn:
+                name: spend_eventid
+                referenceColumnName: id
+    lifecycleCallbacks: {  }

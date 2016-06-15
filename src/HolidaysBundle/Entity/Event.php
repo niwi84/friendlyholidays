@@ -8,6 +8,11 @@ namespace HolidaysBundle\Entity;
 class Event
 {
     // CUSTOM CODE
+    public function __toString()
+    {
+        return $this->getEventLibel();
+    }
+
     private $eventUserId;
 
     public function setEventUserId(\HolidaysBundle\Entity\User $eventUserId = null)
