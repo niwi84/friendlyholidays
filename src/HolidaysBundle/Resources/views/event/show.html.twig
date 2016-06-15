@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Event</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ event.id }}</td>
+            </tr>
+            <tr>
+                <th>Eventetat</th>
+                <td>{% if event.eventEtat %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Eventlibel</th>
+                <td>{{ event.eventLibel }}</td>
+            </tr>
+            <tr>
+                <th>Eventdescrip</th>
+                <td>{{ event.eventDescrip }}</td>
+            </tr>
+            <tr>
+                <th>Eventuserid</th>
+                <td>{{ event.eventUserId }}</td>
+            </tr>
+            <tr>
+                <th>Eventactiv</th>
+                <td>{% if event.eventActiv %}{{ event.eventActiv|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Eventdesactiv</th>
+                <td>{% if event.eventDesactiv %}{{ event.eventDesactiv|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Eventstart</th>
+                <td>{% if event.eventStart %}{{ event.eventStart|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Eventend</th>
+                <td>{% if event.eventEnd %}{{ event.eventEnd|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Eventbudget</th>
+                <td>{{ event.eventBudget }}</td>
+            </tr>
+            <tr>
+                <th>Eventcomment</th>
+                <td>{{ event.eventComment }}</td>
+            </tr>
+            <tr>
+                <th>Eventphoto1</th>
+                <td>{{ event.eventPhoto1 }}</td>
+            </tr>
+            <tr>
+                <th>Eventphoto2</th>
+                <td>{{ event.eventPhoto2 }}</td>
+            </tr>
+            <tr>
+                <th>Eventphoto3</th>
+                <td>{{ event.eventPhoto3 }}</td>
+            </tr>
+            <tr>
+                <th>Eventphoto4</th>
+                <td>{{ event.eventPhoto4 }}</td>
+            </tr>
+            <tr>
+                <th>Eventphoto5</th>
+                <td>{{ event.eventPhoto5 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('event_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('event_edit', { 'id': event.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

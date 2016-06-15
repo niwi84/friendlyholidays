@@ -1,0 +1,82 @@
+HolidaysBundle\Entity\Event:
+    type: entity
+    table: null
+    repositoryClass: HolidaysBundle\Repository\EventRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        eventEtat:
+            type: boolean
+            column: event_etat
+        eventLibel:
+            type: string
+            length: '50'
+            unique: true
+            column: event_libel
+        eventDescrip:
+            type: string
+            length: 255
+            nullable: true
+            column: event_descrip
+        eventActiv:
+            type: datetime
+            nullable: true
+            column: event_activ
+        eventDesactiv:
+            type: datetime
+            nullable: true
+            column: event_desactiv
+        eventStart:
+            type: datetime
+            nullable: true
+            column: event_start
+        eventEnd:
+            type: datetime
+            nullable: true
+            column: event_end
+        eventBudget:
+            type: decimal
+            precision: '9'
+            scale: '2'
+            nullable: true
+            column: event_budget
+        eventComment:
+            type: text
+            nullable: true
+            column: event_comment
+        eventPhoto1:
+            type: string
+            length: '20'
+            nullable: true
+            column: event_photo1
+        eventPhoto2:
+            type: string
+            length: '20'
+            nullable: true
+            column: event_photo2
+        eventPhoto3:
+            type: string
+            length: '20'
+            nullable: true
+            column: event_photo3
+        eventPhoto4:
+            type: string
+            length: '20'
+            nullable: true
+            column: event_photo4
+        eventPhoto5:
+            type: string
+            length: '20'
+            nullable: true
+            column: event_photo5
+    manyToOne:
+        eventUserId:
+            targetEntity: HolidaysBundle\Entity\User
+            joinColumn:
+                name: event_userid
+                referenceColumnName: id
+    lifecycleCallbacks: {  }
