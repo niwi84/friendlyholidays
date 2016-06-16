@@ -82,9 +82,9 @@ class SpendController extends Controller
 
             if($editForm->get('phSpend')->getData() != null) {
 
-                if($event->getSpendPhoto() != null) {
-                    unlink(__DIR__.'/../../../web/uploads/photosSpends/'.$event->getSpendPhoto());
-                    $soiree->setSpendPhoto(null);
+                if($spend->getSpendPhoto() != null) {
+                    unlink(__DIR__.'/../../../web/uploads/photosSpends/'.$spend->getSpendPhoto());
+                    $spend->setSpendPhoto(null);
                 }
             }
 
