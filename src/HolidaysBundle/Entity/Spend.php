@@ -46,6 +46,11 @@ class Spend
     /**
      * @var string
      */
+    private $spendLibel;
+
+    /**
+     * @var string
+     */
     private $spendType;
 
     /**
@@ -227,5 +232,28 @@ class Spend
     {
         return $this->spendPhoto;
     }
-}
 
+    /**
+     * Set spendLibel
+     *
+     * @param string $spendLibel
+     *
+     * @return Spend
+     */
+    public function setSpendLibel($spendLibel)
+    {
+        $this->spendLibel = $spendLibel;
+
+        return $this;
+    }
+
+    /**
+     * Get spendLibel
+     *
+     * @return string
+     */
+    public function getSpendLibel()
+    {
+        return $this->spendLibel;
+    }
+}

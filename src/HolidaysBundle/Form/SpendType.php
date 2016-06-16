@@ -31,6 +31,7 @@ class SpendType extends AbstractType
                     "Divers" => "Divers"
                 )
             ))
+            ->add('spendLibel')
             ->add('spendDate', 'datetime')
             ->add('spendPerso', "number", array(
                 "label" => "Coût par personne :"))

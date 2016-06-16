@@ -10,6 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>Spendtype</th>
+                <th>Spendlibel</th>
                 <th>Spenddate</th>
                 <th>Spendperso</th>
                 <th>Spendgroup</th>
@@ -23,6 +24,7 @@
             <tr>
                 <td><a href="{{ path('spend_show', { 'id': spend.id }) }}">{{ spend.id }}</a></td>
                 <td>{{ spend.spendType }}</td>
+                <td>{{ spend.spendLibel }}</td>
                 <td>{% if spend.spendDate %}{{ spend.spendDate|date('d-m-Y H:i:s') }}{% endif %}</td>
                 <td>{{ spend.spendPerso }}</td>
                 <td>{{ spend.spendGroup }}</td>

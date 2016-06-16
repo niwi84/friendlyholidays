@@ -13,6 +13,10 @@ HolidaysBundle\Entity\Spend:
             type: string
             length: '50'
             column: spend_type
+        spendLibel:
+            type: string
+            length: '100'
+            column: spend_libel
         spendDate:
             type: datetime
             column: spend_date
