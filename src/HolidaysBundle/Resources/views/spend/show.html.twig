@@ -22,16 +22,12 @@
                         <td>{% if spend.spendDate %}{{ spend.spendDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                     </tr>
                     <tr>
-                        <th>Spendperso</th>
-                        <td>{{ spend.spendPerso }}</td>
+                        <th>Spendmontant</th>
+                        <td>{{ spend.spendMontant }}</td>
                     </tr>
                     <tr>
-                        <th>Spendgroup</th>
-                        <td>{{ spend.spendGroup }}</td>
-                    </tr>
-                    <tr>
-                        <th>Spendgroup2</th>
-                        <td>{% if spend.spendGroup2 %}Yes{% else %}No{% endif %}</td>
+                        <th>Spendgroupindiv</th>
+                        <td>{% if spend.spendGroupIndiv %}Oui{% else %}Non{% endif %}</td>
                     </tr>
                     <tr>
                         <th>Spendphoto</th>
