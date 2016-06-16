@@ -25,6 +25,7 @@
                 {#<td><a href="{{ path('spend_show', { 'id': spend.id }) }}">{{ spend.id }}</a></td>#}
                 <td><a href="{{ path('spend_show', { 'id': spend.id }) }}">{{ spend.spendLibel }}</a></td>
                 <td>{{ spend.spendType }}</td>
+                <td>{{ spend.spendLibel }}</td>
                 <td>{% if spend.spendDate %}{{ spend.spendDate|date('d-m-Y\nH:i:s')|nl2br }}{% endif %}</td>
                 <td>{{ spend.spendMontant }}</td>
                 <td>{% if spend.spendGroupIndiv %}Oui{% else %}Non{% endif %}</td>

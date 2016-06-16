@@ -156,11 +156,6 @@ class Spend
     private $spendMontant;
 
     /**
-     * @var string
-     */
-    private $spendGroup;
-
-    /**
      * @var bool
      */
     private $spendGroupIndiv;
@@ -252,31 +247,7 @@ class Spend
     {
         return $this->spendMontant;
     }
-
-    /**
-     * Set spendGroup
-     *
-     * @param string $spendGroup
-     *
-     * @return Spend
-     */
-    public function setSpendGroup($spendGroup)
-    {
-        $this->spendGroup = $spendGroup;
-
-        return $this;
-    }
-
-    /**
-     * Get spendGroup
-     *
-     * @return string
-     */
-    public function getSpendGroup()
-    {
-        return $this->spendGroup;
-    }
-
+    
     /**
      * Set spendGroupIndiv
      *
