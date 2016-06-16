@@ -4,8 +4,16 @@
 
 {% block body %}
 
-    <h1 class="jumbotron">Spend creation</h1>
+    <div id="header" class="jumbotron">
+        <h1>Spend creation</h1>
+        <a class="btn btn-primary btn-lg" href="{{ path('spend_index') }}">
+            <i class="glyphicon glyphicon-plus"></i>
+            Retour à la liste
+        </a>
 
+    </div>
+
+    <div class="container-fluid">
         {{ form_start(form) }}
 
         {{ form_label(form.spendUserId, 'C ki ka payé ?') }}
@@ -20,5 +28,5 @@
                 <a href="{{ path('spend_index') }}">Back to the list</a>
             </li>
         </ul>
-
+    </div>
 {% endblock %}

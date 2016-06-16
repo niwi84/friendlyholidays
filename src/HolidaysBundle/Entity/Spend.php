@@ -11,7 +11,7 @@ class Spend
     // CUSTOM CODE
 
     public $phSpend;
-    
+
     private $spendUserId;
 
     public function setSpendUserId(\HolidaysBundle\Entity\User $spendUserId = null)
@@ -127,7 +127,7 @@ class Spend
             unlink($phSpend);
         }
     }
-    
+
     ///////////////////////
     // GENERATED CODE
     /**
@@ -247,7 +247,7 @@ class Spend
     {
         return $this->spendMontant;
     }
-    
+
     /**
      * Set spendGroupIndiv
      *

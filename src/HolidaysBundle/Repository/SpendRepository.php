@@ -10,4 +10,25 @@ namespace HolidaysBundle\Repository;
  */
 class SpendRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getNbSpendsEvent($id_event)
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT COUNT(p.id) FROM HolidaysBundle:Spend p WHERE p.spendEventId = :idEvent')
+            ->setParameter('idEvent', $id_event)
+            ->getSingleScalarResult();
+    }
+    public function getSpendsEvent($id_event)
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT p.spendType, p.spendLibel, p.spendMontant, p.spendGroupIndiv, u.nomPrenom FROM HolidaysBundle:Spend p LEFT JOIN p.spendUserId u WHERE p.spendEventId = :idEvent')
+            ->setParameter('idEvent', $id_event)
+            ->getResult();
+    }
+    public function getSpendsByKiEvent($id_event)
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT p.spendType, p.spendLibel, p.spendMontant, p.spendGroupIndiv, u.nomPrenom FROM HolidaysBundle:Spend p LEFT JOIN p.spendUserId u WHERE p.spendEventId = :idEvent')
+            ->setParameter('idEvent', $id_event)
+            ->getResult();
+    }
 }

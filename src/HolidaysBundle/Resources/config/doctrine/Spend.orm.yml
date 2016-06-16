@@ -2,12 +2,14 @@ HolidaysBundle\Entity\Spend:
     type: entity
     table: null
     repositoryClass: HolidaysBundle\Repository\SpendRepository
+
     id:
         id:
             type: integer
             id: true
             generator:
                 strategy: AUTO
+
     fields:
         spendType:
             type: string
@@ -34,6 +36,7 @@ HolidaysBundle\Entity\Spend:
             length: '20'
             nullable: true
             column: spend_photo
+
     manyToOne:
         spendUserId:
             targetEntity: HolidaysBundle\Entity\User
@@ -45,10 +48,10 @@ HolidaysBundle\Entity\Spend:
             joinColumn:
                 name: spend_eventid
                 referenceColumnName: id
+
     lifecycleCallbacks:
         prePersist: [ preUpload, setCreatedAtValue, setExpiresAtValue ]
         preUpdate: [ preUpload, setUpdatedAtValue ]
         postPersist: [ upload ]
         postUpdate: [ upload ]
         postRemove: [ removeUpload ]
-

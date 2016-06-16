@@ -3,23 +3,33 @@
 {% block title %}Spend Edit{% endblock %}
 
 {% block body %}
+    <div id="header" class="jumbotron">
+        <h1>Spend edit</h1>
+        <a class="btn btn-primary btn-lg" href="{{ path('spend_index') }}">
+            <i class="glyphicon glyphicon-plus"></i>
+            Retour à la liste
+        </a>
 
-    <h1 class="jumbotron">Spend edit</h1>
-    <blockquote><!--class="blockquote-reverse"-->
-        {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit"/>
-        {{ form_end(edit_form) }}
-    </blockquote>
-    <ul class="nopuce">
-        <li>
-            <a href="{{ path('spend_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-            <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    </div>
+
+    <div class="container-fluid">
+        <blockquote><!--class="blockquote-reverse"-->
+            {{ form_start(edit_form) }}
+            {{ form_widget(edit_form) }}
+            <input type="submit" value="Edit"/>
+            {{ form_end(edit_form) }}
+        </blockquote>
+
+        <ul class="nopuce">
+            <li>
+                <a href="{{ path('spend_index') }}">Back to the list</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+    </div>
 
 {% endblock %}

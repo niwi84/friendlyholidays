@@ -3,51 +3,55 @@
 {% block title %}Spend{% endblock %}
 
 {% block body %}
-    <h1>Spend list</h1>
 
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            {#<th>Id</th>#}
-            <th>Spendtype</th>
-            <th>Spendlibel</th>
-            <th>Spenddate</th>
-            <th>Spendmontant</th>
-            <th>Spendgroupindiv</th>
-            <th>Spendphoto</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for spend in spends %}
+    <div id="header" class="jumbotron">
+        <h1>Spend list</h1>
+        <a class="btn btn-primary btn-lg" href="{{ path('spend_new') }}">
+            <i class="glyphicon glyphicon-plus"></i>
+            Create a new entry
+        </a>
+    </div>
+
+    <div class="container-fluid">
+
+        <table class="table table-hover">
+            <thead>
             <tr>
-                {#<td><a href="{{ path('spend_show', { 'id': spend.id }) }}">{{ spend.id }}</a></td>#}
-                <td><a href="{{ path('spend_show', { 'id': spend.id }) }}">{{ spend.spendLibel }}</a></td>
-                <td>{{ spend.spendType }}</td>
-                <td>{{ spend.spendLibel }}</td>
-                <td>{% if spend.spendDate %}{{ spend.spendDate|date('d-m-Y\nH:i:s')|nl2br }}{% endif %}</td>
-                <td>{{ spend.spendMontant }}</td>
-                <td>{% if spend.spendGroupIndiv %}Oui{% else %}Non{% endif %}</td>
-                {#<td>{{ spend.spendPhoto }}</td>#}
-                <td><img class="image_spend" src="{{ asset('uploads/photosSpends/') }}{{ spend.spendPhoto }}"></td>
-                <td>
-                    <ul class="nopuce">
-                        <li>
-                            <a href="{{ path('spend_show', { 'id': spend.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('spend_edit', { 'id': spend.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
+                {#<th>Id</th>#}
+                <th>Spendtype</th>
+                <th>Spendlibel</th>
+                <th>Spenddate</th>
+                <th>Spendmontant</th>
+                <th>Spendgroupindiv</th>
+                <th>Spendphoto</th>
+                <th>Actions</th>
             </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <ul class="nopuce">
-        <li>
-            <a href="{{ path('spend_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+            </thead>
+            <tbody>
+            {% for spend in spends %}
+                <tr>
+                    {#<td><a href="{{ path('spend_show', { 'id': spend.id }) }}">{{ spend.id }}</a></td>#}
+                    <td><a href="{{ path('spend_show', { 'id': spend.id }) }}">{{ spend.spendLibel }}</a></td>
+                    <td>{{ spend.spendType }}</td>
+                    <td>{{ spend.spendLibel }}</td>
+                    <td>{% if spend.spendDate %}{{ spend.spendDate|date('d-m-Y\nH:i:s')|nl2br }}{% endif %}</td>
+                    <td>{{ spend.spendMontant }}</td>
+                    <td>{% if spend.spendGroupIndiv %}Oui{% else %}Non{% endif %}</td>
+                    {#<td>{{ spend.spendPhoto }}</td>#}
+                    <td><img class="image_spend" src="{{ asset('uploads/photosSpends/') }}{{ spend.spendPhoto }}"></td>
+                    <td>
+                        <ul class="nopuce">
+                            <li>
+                                <a href="{{ path('spend_show', { 'id': spend.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('spend_edit', { 'id': spend.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
