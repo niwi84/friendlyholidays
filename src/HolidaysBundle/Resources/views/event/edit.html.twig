@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Event Edit{% endblock %}
-{% block body %}
-<div class="container-fluid">
 
-<h1>Event edit</h1>
+{% block body %}
+
+<h1 class="jumbotron">Event edit</h1>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
@@ -21,5 +21,4 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
-    </div>
 {% endblock %}

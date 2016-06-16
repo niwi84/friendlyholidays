@@ -3,21 +3,20 @@
 {% block title %}Spend{% endblock %}
 
 {% block body %}
-    <div class="container-fluid">
-        <h1>Spend list</h1>
+    <h1>Spend list</h1>
 
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                {#<th>Id</th>#}
-                <th>Spendtype</th>
-                <th>Spendlibel</th>
-                <th>Spenddate</th>
-                <th>Spendmontant</th>
-                <th>Spendgroupindiv</th>
-                <th>Spendphoto</th>
-                <th>Actions</th>
-            </tr>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            {#<th>Id</th>#}
+            <th>Spendtype</th>
+            <th>Spendlibel</th>
+            <th>Spenddate</th>
+            <th>Spendmontant</th>
+            <th>Spendgroupindiv</th>
+            <th>Spendphoto</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for spend in spends %}
@@ -30,7 +29,7 @@
                 <td>{{ spend.spendMontant }}</td>
                 <td>{% if spend.spendGroupIndiv %}Oui{% else %}Non{% endif %}</td>
                 {#<td>{{ spend.spendPhoto }}</td>#}
-                <td><img class="image_spend" src="{{ asset('uploads/photosSpends/')}}{{ spend.spendPhoto }}"></td>
+                <td><img class="image_spend" src="{{ asset('uploads/photosSpends/') }}{{ spend.spendPhoto }}"></td>
                 <td>
                     <ul>
                         <li>
@@ -46,10 +45,9 @@
         </tbody>
     </table>
 
-        <ul>
-            <li>
-                <a href="{{ path('spend_new') }}">Create a new entry</a>
-            </li>
-        </ul>
-    </div>
+    <ul>
+        <li>
+            <a href="{{ path('spend_new') }}">Create a new entry</a>
+        </li>
+    </ul>
 {% endblock %}

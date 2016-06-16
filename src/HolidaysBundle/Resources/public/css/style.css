@@ -1,4 +1,5 @@
-ul li {
+.col-lg-4 ul li,
+ul.nopuce li {
     list-style-type: none;
     margin-bottom: 10px;
 }
