@@ -3,18 +3,20 @@
 {% block title %}Events{% endblock %}
 
 {% block body %}
-    <h1>Event list</h1>
+<div class="container-fluid">
+
+<h1>Event list</h1>
 
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Eventetat</th>
+                {#<th>Id</th>
+                <th>Eventetat</th>#}
                 <th>Eventlibel</th>
                 <th>Eventdescrip</th>
                 <th>eventUserId</th>
-                <th>Eventactiv</th>
-                <th>Eventdesactiv</th>
+                {#<th>Eventactiv</th>
+                <th>Eventdesactiv</th>#}
                 <th>Eventstart</th>
                 <th>Eventend</th>
                 <th>Eventbudget</th>
@@ -31,23 +33,23 @@
         <tbody>
         {% for event in events %}
             <tr>
-                <td><a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.id }}</a></td>
-                <td>{% if event.eventEtat %}Yes{% else %}No{% endif %}</td>
-                <td>{{ event.eventLibel }}</td>
+                {#<td><a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.id }}</a></td>
+                <td>{% if event.eventEtat %}Yes{% else %}No{% endif %}</td>#}
+                <td><a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.eventLibel }}</a></td>
                 <td>{{ event.eventDescrip }}</td>
                 <td>{{ event.eventUserId }}</td>
-                <td>{% if event.eventActiv %}{{ event.eventActiv|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if event.eventDesactiv %}{{ event.eventDesactiv|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if event.eventStart %}{{ event.eventStart|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if event.eventEnd %}{{ event.eventEnd|date('Y-m-d H:i:s') }}{% endif %}</td>
+                {#<td>{% if event.eventActiv %}{{ event.eventActiv|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if event.eventDesactiv %}{{ event.eventDesactiv|date('Y-m-d H:i:s') }}{% endif %}</td>#}
+                <td>{% if event.eventStart %}{{ event.eventStart|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if event.eventEnd %}{{ event.eventEnd|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ event.eventBudget }}</td>
                 <td>{{ event.eventComment }}</td>
                 {#<td>{{ event.eventPhoto1 }}</td>#}
                 <td><img class="image_event" src="{{ asset('uploads/photosEvents/')}}{{ event.eventPhoto1 }}"></td>
-                {#<td>{{ event.eventPhoto2 }}</td>#}
-                {#<td>{{ event.eventPhoto3 }}</td>#}
-                {#<td>{{ event.eventPhoto4 }}</td>#}
-                {#<td>{{ event.eventPhoto5 }}</td>#}
+                {#<td>{{ event.eventPhoto2 }}</td>
+                <td>{{ event.eventPhoto3 }}</td>
+                <td>{{ event.eventPhoto4 }}</td>
+                <td>{{ event.eventPhoto5 }}</td>#}
                 <td>{{ event.participants|join('\n')|nl2br }}</td>
                 <td>
                     <ul>
@@ -69,4 +71,5 @@
             <a href="{{ path('event_new') }}">Create a new entry</a>
         </li>
     </ul>
+    </div>
 {% endblock %}
