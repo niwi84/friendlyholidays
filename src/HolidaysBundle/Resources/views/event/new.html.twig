@@ -3,19 +3,35 @@
 {% block title %}Event New{% endblock %}
 
 {% block body %}
-<div class="container-fluid">
+    <div class="container-fluid point">
 
-<h1>Event creation</h1>
+        <h1 class="jumbotron">Event creation</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-lg-offset-1 col-lg-11">
+                {{ form_widget(form) }}
+            </div>
+        </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('event_index') }}">Back to the list</a>
-        </li>
-    </ul>
+        <ul>
+            <li>
+                <a href="{{ path('event_index') }}" class="btn btn-default">
+                    <i class="glyphicon glyphicon-chevron-left"></i>
+                    Retour à la liste
+                </a>
+            </li>
+            <li>
+                <button type="submit" class="btn btn-primary"/>
+                <i class="glyphicon glyphicon-ok"></i>
+                Ajouter
+                </button>
+            </li>
+        </ul>
+
+
+        {{ form_end(form) }}
+
+
     </div>
 {% endblock %}

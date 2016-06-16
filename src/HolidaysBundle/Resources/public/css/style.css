@@ -3,3 +3,27 @@ ul li {
     margin-bottom: 10px;
 }
 
+label{
+    display: block;
+    margin: 0px;
+}
+
+input, select, textarea,#event_eventEtat{
+    margin: 0 0 20px 0;
+}
+
+#event_eventStart_date_year, #event_eventStart_date_month, #event_eventStart_date_day,
+#event_eventDesactiv_date_year, #event_eventDesactiv_date_month, #event_eventDesactiv_date_day,
+#event_eventActiv_date_year, #event_eventActiv_date_month, #event_eventActiv_date_day,
+#event_eventEnd_date_year, #event_eventEnd_date_month, #event_eventEnd_date_day
+{
+    margin: 0 0 5px 0;
+}
+
+#event_participants label{
+    display: inline-block;
+}
+
+.btn-default{
+    margin-top: 30px;
+}
