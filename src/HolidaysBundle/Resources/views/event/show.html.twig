@@ -53,24 +53,25 @@
             </tr>
             <tr>
                 <th>Eventphoto1</th>
-                <td>{{ event.eventPhoto1 }}</td>
+                {#<td>{{ event.eventPhoto1 }}</td>#}
+                <td><img class="image_event" src="{{ asset('uploads/photosEvents/')}}{{ event.eventPhoto1 }}"></td>
             </tr>
-            <tr>
-                <th>Eventphoto2</th>
-                <td>{{ event.eventPhoto2 }}</td>
-            </tr>
-            <tr>
-                <th>Eventphoto3</th>
-                <td>{{ event.eventPhoto3 }}</td>
-            </tr>
-            <tr>
-                <th>Eventphoto4</th>
-                <td>{{ event.eventPhoto4 }}</td>
-            </tr>
-            <tr>
-                <th>Eventphoto5</th>
-                <td>{{ event.eventPhoto5 }}</td>
-            </tr>
+            {#<tr>#}
+                {#<th>Eventphoto2</th>#}
+                {#<td>{{ event.eventPhoto2 }}</td>#}
+            {#</tr>#}
+            {#<tr>#}
+                {#<th>Eventphoto3</th>#}
+                {#<td>{{ event.eventPhoto3 }}</td>#}
+            {#</tr>#}
+            {#<tr>#}
+                {#<th>Eventphoto4</th>#}
+                {#<td>{{ event.eventPhoto4 }}</td>#}
+            {#</tr>#}
+            {#<tr>#}
+                {#<th>Eventphoto5</th>#}
+                {#<td>{{ event.eventPhoto5 }}</td>#}
+            {#</tr>#}
         </tbody>
     </table>
 

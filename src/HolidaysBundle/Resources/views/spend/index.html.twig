@@ -29,7 +29,8 @@
                 <td>{{ spend.spendPerso }}</td>
                 <td>{{ spend.spendGroup }}</td>
                 <td>{% if spend.spendGroup2 %}Yes{% else %}No{% endif %}</td>
-                <td>{{ spend.spendPhoto }}</td>
+                {#<td>{{ spend.spendPhoto }}</td>#}
+                <td><img class="image_spend" src="{{ asset('uploads/photosSpends/')}}{{ spend.spendPhoto }}"></td>
                 <td>
                     <ul>
                         <li>

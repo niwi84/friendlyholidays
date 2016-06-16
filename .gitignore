@@ -1,4 +1,6 @@
 /web/bundles/
+/web/uploads/photosSpends/*
+/web/uploads/photosEvents/*
 /app/bootstrap.php.cache
 /app/cache/*
 /app/config/parameters.yml

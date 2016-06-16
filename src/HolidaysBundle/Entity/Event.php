@@ -2,12 +2,16 @@
 
 namespace HolidaysBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 /**
  * Event
  */
 class Event
 {
     // CUSTOM CODE
+
+    public $phEvent;
+    
     public function __toString()
     {
         return $this->getEventLibel();
@@ -34,6 +38,95 @@ class Event
     public function __construct()
     {
         $this->participants = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    protected function getUploadDir()
+    {
+        return 'uploads/photosEvents';
+    }
+    protected function getUploadRootDir()
+    {
+        return __DIR__.'/../../../web/'.$this->getUploadDir();
+    }
+    public function getWebPath()
+    {
+        return null === $this->eventPhoto1 ? null : $this->getUploadDir().'/'.$this->eventPhoto1;
+    }
+    public function getAbsolutePath()
+    {
+        return null === $this->eventPhoto1 ? null : $this->getUploadRootDir().'/'.$this->eventPhoto1;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function preUpload()
+    {
+        if (null !== $this->phEvent) {
+            // do whatever you want to generate a unique name
+            $this->eventPhoto1 = uniqid().'.'.$this->phEvent->guessExtension();
+        }
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue()
+    {
+        // Add your code here
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setExpiresAtValue()
+    {
+        // Add your code here
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function preUpdate()
+    {
+        // Add your code here
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function setUpdatedAtValue()
+    {
+        // Add your code here
+    }
+
+    /**
+     * @ORM\PostPersist
+     */
+    public function upload()
+    {
+        if (null === $this->phEvent) {
+            return;
+        }
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
+
+        $this->phEvent->move($this->getUploadRootDir(), $this->eventPhoto1);
+
+        unset($this->phEvent);
+
+    }
+
+    /**
+     * @ORM\PostRemove
+     */
+    public function removeUpload()
+    {
+        // Add your code here
+        if ($phEvent = $this->getAbsolutePath()) {
+            unlink($phEvent);
+        }
     }
 
     ///////////////////////
@@ -459,5 +552,38 @@ class Event
     {
         return $this->eventPhoto5;
     }
-}
 
+    /**
+     * Add participant
+     *
+     * @param \HolidaysBundle\Entity\User $participant
+     *
+     * @return Event
+     */
+    public function addParticipant(\HolidaysBundle\Entity\User $participant)
+    {
+        $this->participants[] = $participant;
+
+        return $this;
+    }
+
+    /**
+     * Remove participant
+     *
+     * @param \HolidaysBundle\Entity\User $participant
+     */
+    public function removeParticipant(\HolidaysBundle\Entity\User $participant)
+    {
+        $this->participants->removeElement($participant);
+    }
+
+    /**
+     * Get participants
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getParticipants()
+    {
+        return $this->participants;
+    }
+}
