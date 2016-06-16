@@ -24,7 +24,7 @@ class Spend
 
     private $spendEventId;
 
-    public function setSpendEventId(\HolidaysBundle\Entity\User $spendEventId = null)
+    public function setSpendEventId(\HolidaysBundle\Entity\Event $spendEventId = null)
     {
         $this->spendEventId = $spendEventId;
 
