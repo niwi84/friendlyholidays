@@ -3,102 +3,111 @@
 {% block title %}Event Show{% endblock %}
 
 {% block body %}
+
     <div class="container-fluid">
 
-    <h1>Event</h1>
 
-    <table class="table table-hover">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ event.id }}</td>
-            </tr>
-            <tr>
-                <th>Eventetat</th>
-                <td>{% if event.eventEtat %}Yes{% else %}No{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Eventlibel</th>
-                <td>{{ event.eventLibel }}</td>
-            </tr>
-            <tr>
-                <th>Eventdescrip</th>
-                <td>{{ event.eventDescrip }}</td>
-            </tr>
-            <tr>
-                <th>Eventuserid</th>
-                <td>{{ event.eventUserId }}</td>
-            </tr>
-            <tr>
-                <th>Eventactiv</th>
-                <td>{% if event.eventActiv %}{{ event.eventActiv|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Eventdesactiv</th>
-                <td>{% if event.eventDesactiv %}{{ event.eventDesactiv|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Eventstart</th>
-                <td>{% if event.eventStart %}{{ event.eventStart|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Eventend</th>
-                <td>{% if event.eventEnd %}{{ event.eventEnd|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Eventbudget</th>
-                <td>{{ event.eventBudget }}</td>
-            </tr>
-            <tr>
-                <th>Eventcomment</th>
-                <td>{{ event.eventComment }}</td>
-            </tr>
-            <tr>
-                <th>Eventphoto1</th>
-                {#<td>{{ event.eventPhoto1 }}</td>#}
-                <td><img class="image_event" src="{{ asset('uploads/photosEvents/')}}{{ event.eventPhoto1 }}"></td>
-            </tr>
-            {#<tr>#}
-                {#<th>Eventphoto2</th>#}
-                {#<td>{{ event.eventPhoto2 }}</td>#}
-            {#</tr>#}
-            {#<tr>#}
-                {#<th>Eventphoto3</th>#}
-                {#<td>{{ event.eventPhoto3 }}</td>#}
-            {#</tr>#}
-            {#<tr>#}
-                {#<th>Eventphoto4</th>#}
-                {#<td>{{ event.eventPhoto4 }}</td>#}
-            {#</tr>#}
-            {#<tr>#}
-                {#<th>Eventphoto5</th>#}
-                {#<td>{{ event.eventPhoto5 }}</td>#}
-            {#</tr>#}
-        </tbody>
-    </table>
+        <h1 class="jumbotron">Event</h1>
 
-    <ul>
-        <li>
-            <a href="{{ path('event_index') }}" class="btn btn-default">
-                <i class="glyphicon glyphicon-chevron-left"></i>
-                Retour à la liste
-            </a>
-        </li>
-        <li>
-            <a href="{{ path('event_edit', { 'id': event.id }) }}" class="btn btn-default">
-                <i class="glyphicon glyphicon-edit"></i>
-                Modifier l'annonce
-            </a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
+        <div class="row">
+            <div class="col-lg-8">
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ event.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Eventetat</th>
+                        <td>{% if event.eventEtat %}Yes{% else %}No{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <th>Eventlibel</th>
+                        <td>{{ event.eventLibel }}</td>
+                    </tr>
+                    <tr>
+                        <th>Eventdescrip</th>
+                        <td>{{ event.eventDescrip }}</td>
+                    </tr>
+                    <tr>
+                        <th>Eventuserid</th>
+                        <td>{{ event.eventUserId }}</td>
+                    </tr>
+                    <tr>
+                        <th>Eventactiv</th>
+                        <td>{% if event.eventActiv %}{{ event.eventActiv|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <th>Eventdesactiv</th>
+                        <td>{% if event.eventDesactiv %}{{ event.eventDesactiv|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <th>Eventstart</th>
+                        <td>{% if event.eventStart %}{{ event.eventStart|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <th>Eventend</th>
+                        <td>{% if event.eventEnd %}{{ event.eventEnd|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <th>Eventbudget</th>
+                        <td>{{ event.eventBudget }}</td>
+                    </tr>
+                    <tr>
+                        <th>Eventcomment</th>
+                        <td>{{ event.eventComment }}</td>
+                    </tr>
+                    <tr>
+                        <th>Eventphoto1</th>
+                        {#<td>{{ event.eventPhoto1 }}</td>#}
+                        <td><img class="image_event" src="{{ asset('uploads/photosEvents/') }}{{ event.eventPhoto1 }}">
+                        </td>
+                    </tr>
+                    {#<tr>#}
+                    {#<th>Eventphoto2</th>#}
+                    {#<td>{{ event.eventPhoto2 }}</td>#}
+                    {#</tr>#}
+                    {#<tr>#}
+                    {#<th>Eventphoto3</th>#}
+                    {#<td>{{ event.eventPhoto3 }}</td>#}
+                    {#</tr>#}
+                    {#<tr>#}
+                    {#<th>Eventphoto4</th>#}
+                    {#<td>{{ event.eventPhoto4 }}</td>#}
+                    {#</tr>#}
+                    {#<tr>#}
+                    {#<th>Eventphoto5</th>#}
+                    {#<td>{{ event.eventPhoto5 }}</td>#}
+                    {#</tr>#}
+                    </tbody>
+                </table>
+            </div>
 
-                <button type="submit" class="btn btn-danger">
-                    <i class="glyphicon glyphicon-trash"></i>
-                    Supprimer l'annonce
-                </button>
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
-</div>
+            <div class="col-lg-4">
+                <ul>
+                    <li>
+                        <a href="{{ path('event_index') }}" class="btn btn-default">
+                            <i class="glyphicon glyphicon-chevron-left"></i>
+                            Retour à la liste
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('event_edit', { 'id': event.id }) }}" class="btn btn-default">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            Modifier l'annonce
+                        </a>
+                    </li>
+                    <li>
+                        {{ form_start(delete_form) }}
+
+                        <button type="submit" class="btn btn-danger">
+                            <i class="glyphicon glyphicon-trash"></i>
+                            Supprimer l'annonce
+                        </button>
+                        {{ form_end(delete_form) }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}
