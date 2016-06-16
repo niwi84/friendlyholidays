@@ -2,24 +2,44 @@
 
 {% block title %}Event Edit{% endblock %}
 {% block body %}
-<div class="container-fluid">
+    <div class="container-fluid">
 
-<h1>Event edit</h1>
+        <h1 class="jumbotron">Event edit</h1>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+        {{ form_start(edit_form) }}
+        <div class="row">
+            <div class="col-lg-offset-1 col-lg-11">
+                {{ form_widget(edit_form) }}
+            </div>
+        </div>
+        {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('event_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        <div class="row">
+            <div class="col-lg-offset-1 col-lg-11">
+                <ul>
+                    <li>
+                        <a href="{{ path('event_index') }}" class="btn btn-default">
+                            <i class="glyphicon glyphicon-chevron-left"></i>
+                            Retour à la liste
+                        </a>
+                    </li>
+                    <li>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            Modifier l'annonce
+                        </button>
+                    </li>
+                    <li>
+                        {{ form_start(delete_form) }}
+                        <button type="submit" class="btn btn-danger">
+                            <i class="glyphicon glyphicon-trash"></i>
+                            Supprimer l'annonce
+                        </button>
+                        {{ form_end(delete_form) }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 {% endblock %}

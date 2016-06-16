@@ -13,52 +13,52 @@
             <div class="col-lg-8">
                 <table class="table table-hover">
                     <tbody>
-                    <tr>
+                    {#<tr>
                         <th>Id</th>
                         <td>{{ event.id }}</td>
-                    </tr>
+                    </tr>#}
+                    {#<tr>
+                        <th>Etat</th>
+                        <td>{% if event.eventEtat %}Actif{% else %}Inactif{% endif %}</td>
+                    </tr>#}
                     <tr>
-                        <th>Eventetat</th>
-                        <td>{% if event.eventEtat %}Yes{% else %}No{% endif %}</td>
-                    </tr>
-                    <tr>
-                        <th>Eventlibel</th>
+                        <th>Libellé</th>
                         <td>{{ event.eventLibel }}</td>
                     </tr>
                     <tr>
-                        <th>Eventdescrip</th>
+                        <th>Description</th>
                         <td>{{ event.eventDescrip }}</td>
                     </tr>
                     <tr>
-                        <th>Eventuserid</th>
+                        <th>Organisateur</th>
                         <td>{{ event.eventUserId }}</td>
                     </tr>
-                    <tr>
+                    {#<tr>
                         <th>Eventactiv</th>
                         <td>{% if event.eventActiv %}{{ event.eventActiv|date('Y-m-d H:i:s') }}{% endif %}</td>
                     </tr>
                     <tr>
                         <th>Eventdesactiv</th>
                         <td>{% if event.eventDesactiv %}{{ event.eventDesactiv|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    </tr>#}
+                    <tr>
+                        <th>Départ</th>
+                        <td>{% if event.eventStart %}{{ event.eventStart|date('d-m-Y H:i:s') }}{% endif %}</td>
                     </tr>
                     <tr>
-                        <th>Eventstart</th>
-                        <td>{% if event.eventStart %}{{ event.eventStart|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <th>Retour</th>
+                        <td>{% if event.eventEnd %}{{ event.eventEnd|date('d-m-Y H:i:s') }}{% endif %}</td>
                     </tr>
                     <tr>
-                        <th>Eventend</th>
-                        <td>{% if event.eventEnd %}{{ event.eventEnd|date('Y-m-d H:i:s') }}{% endif %}</td>
-                    </tr>
-                    <tr>
-                        <th>Eventbudget</th>
+                        <th>Budget Prévisionnel</th>
                         <td>{{ event.eventBudget }}</td>
                     </tr>
                     <tr>
-                        <th>Eventcomment</th>
+                        <th>Commentaires</th>
                         <td>{{ event.eventComment }}</td>
                     </tr>
                     <tr>
-                        <th>Eventphoto1</th>
+                        <th>Photo</th>
                         {#<td>{{ event.eventPhoto1 }}</td>#}
                         <td><img class="image_event" src="{{ asset('uploads/photosEvents/') }}{{ event.eventPhoto1 }}">
                         </td>

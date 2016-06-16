@@ -1,6 +1,11 @@
+ul{
+    margin: 0;
+    padding: 0;
+}
+
 ul li {
     list-style-type: none;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
 }
 
 label{
@@ -26,4 +31,12 @@ input, select, textarea,#event_eventEtat{
 
 .btn-default{
     margin-top: 30px;
+}
+
+.point{
+    display: inline-block;
+}
+
+#place-btn{
+    margin-top: 15px;
 }
