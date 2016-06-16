@@ -84,7 +84,7 @@ class EventController extends Controller
 
                 if($event->getEventPhoto1() != null) {
                     unlink(__DIR__.'/../../../web/uploads/photosEvents/'.$event->getEventPhoto1());
-                    $soiree->setEventPhoto1(null);
+                    $event->setEventPhoto1(null);
                 }
             }
 
