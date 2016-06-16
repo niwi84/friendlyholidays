@@ -36,6 +36,18 @@ class Event
         $this->participants = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    public function setParticipants($participants)
+    {
+        $this->participants = $participants;
+
+        return $this;
+    }
+
+    public function getParticipants()
+    {
+        return $this->participants;
+    }
+
     ///////////////////////
     // GENERATED CODE
     /**

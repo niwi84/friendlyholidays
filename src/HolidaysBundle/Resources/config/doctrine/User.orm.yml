@@ -8,11 +8,7 @@ HolidaysBundle\Entity\User:
             generator:
                 strategy: AUTO
     fields:
-        nom:
-            type: string
-            length: 255
-            nullable: true
-        prenom:
+        nomPrenom:
             type: string
             length: 255
             nullable: true

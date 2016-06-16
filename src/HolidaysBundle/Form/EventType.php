@@ -30,6 +30,13 @@ class EventType extends AbstractType
             ->add('eventPhoto3')
             ->add('eventPhoto4')
             ->add('eventPhoto5')
+            ->add('participants', 'entity', array(
+                'class' => 'HolidaysBundle:User',
+                'property' => 'nomPrenom',
+                'expanded' => 'true',
+                'multiple' => 'true'
+            ))
+
         ;
     }
 

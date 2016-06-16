@@ -2,3 +2,6 @@ holidays_event:
     resource: "@HolidaysBundle/Resources/config/routing/event.yml"
     prefix:   /event
 
+holidays_homepage:
+    path:     /accueil
+    defaults: { _controller: HolidaysBundle:Default:index }

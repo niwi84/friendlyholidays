@@ -22,8 +22,7 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-    public $nom;
-    public $prenom;
+    public $nomPrenom;
 
     public function __construct()
     {
@@ -32,48 +31,26 @@ class User extends BaseUser
     }
 
     /**
-     * Set nom
+     * Set nomPrenom
      *
      * @param string $nom
      * @return User
      */
-    public function setNom($nom)
+    public function setNomPrenom($nomPrenom)
     {
-        $this->nom = $nom;
+        $this->nomPrenom = $nomPrenom;
 
         return $this;
     }
 
     /**
-     * Get nom
+     * Get nomPrenom
      *
-     * @return string 
+     * @return string
      */
-    public function getNom()
+    public function getNomPrenom()
     {
-        return $this->nom;
+        return $this->nomPrenom;
     }
 
-    /**
-     * Set prenom
-     *
-     * @param string $prenom
-     * @return User
-     */
-    public function setPrenom($prenom)
-    {
-        $this->prenom = $prenom;
-
-        return $this;
-    }
-
-    /**
-     * Get prenom
-     *
-     * @return string 
-     */
-    public function getPrenom()
-    {
-        return $this->prenom;
-    }
 }

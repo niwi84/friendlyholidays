@@ -12,6 +12,7 @@
                 <th>Eventetat</th>
                 <th>Eventlibel</th>
                 <th>Eventdescrip</th>
+                <th>eventUserId</th>
                 <th>Eventactiv</th>
                 <th>Eventdesactiv</th>
                 <th>Eventstart</th>
@@ -23,6 +24,7 @@
                 <th>Eventphoto3</th>
                 <th>Eventphoto4</th>
                 <th>Eventphoto5</th>
+                <th>Participants</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -45,6 +47,7 @@
                 <td>{{ event.eventPhoto3 }}</td>
                 <td>{{ event.eventPhoto4 }}</td>
                 <td>{{ event.eventPhoto5 }}</td>
+                <td>{{ event.participants|join('\n')|nl2br }}</td>
                 <td>
                     <ul>
                         <li>
