@@ -153,7 +153,7 @@ class Spend
     /**
      * @var string
      */
-    private $spendPerso;
+    private $spendMontant;
 
     /**
      * @var string
@@ -163,7 +163,7 @@ class Spend
     /**
      * @var bool
      */
-    private $spendGroup2;
+    private $spendGroupIndiv;
 
     /**
      * @var string
@@ -230,27 +230,27 @@ class Spend
     }
 
     /**
-     * Set spendPerso
+     * Set spendMontant
      *
-     * @param string $spendPerso
+     * @param string $spendMontant
      *
      * @return Spend
      */
-    public function setSpendPerso($spendPerso)
+    public function setSpendMontant($spendMontant)
     {
-        $this->spendPerso = $spendPerso;
+        $this->spendMontant = $spendMontant;
 
         return $this;
     }
 
     /**
-     * Get spendPerso
+     * Get spendMontant
      *
      * @return string
      */
-    public function getSpendPerso()
+    public function getSpendMontant()
     {
-        return $this->spendPerso;
+        return $this->spendMontant;
     }
 
     /**
@@ -278,27 +278,27 @@ class Spend
     }
 
     /**
-     * Set spendGroup2
+     * Set spendGroupIndiv
      *
-     * @param boolean $spendGroup2
+     * @param boolean $spendGroupIndiv
      *
      * @return Spend
      */
-    public function setSpendGroup2($spendGroup2)
+    public function setSpendGroupIndiv($spendGroupIndiv)
     {
-        $this->spendGroup2 = $spendGroup2;
+        $this->spendGroupIndiv = $spendGroupIndiv;
 
         return $this;
     }
 
     /**
-     * Get spendGroup2
+     * Get spendGroupIndiv
      *
      * @return bool
      */
-    public function getSpendGroup2()
+    public function getSpendGroupIndiv()
     {
-        return $this->spendGroup2;
+        return $this->spendGroupIndiv;
     }
 
     /**
