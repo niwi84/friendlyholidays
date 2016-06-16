@@ -25,18 +25,18 @@ class EventType extends AbstractType
             ->add('eventEnd', 'datetime')
             ->add('eventBudget')
             ->add('eventComment')
-            ->add('eventPhoto1')
-            ->add('eventPhoto2')
-            ->add('eventPhoto3')
-            ->add('eventPhoto4')
-            ->add('eventPhoto5')
+            ->add('phEvent', 'file', array('label' => 'Photo illustration', 'required' => false))
+//            ->add('eventPhoto1')
+//            ->add('eventPhoto2')
+//            ->add('eventPhoto3')
+//            ->add('eventPhoto4')
+//            ->add('eventPhoto5')
             ->add('participants', 'entity', array(
                 'class' => 'HolidaysBundle:User',
                 'property' => 'nomPrenom',
                 'expanded' => 'true',
                 'multiple' => 'true'
             ))
-
         ;
     }
 

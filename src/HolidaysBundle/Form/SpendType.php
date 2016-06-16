@@ -31,7 +31,10 @@ class SpendType extends AbstractType
                     "Divers" => "Divers"
                 )
             ))
-            ->add('spendLibel')
+            ->add('spendLibel', 'text', array(
+                'attr' => array(
+                    'class' => 'col-sm-2 control-label')
+            ))
             ->add('spendDate', 'datetime')
             ->add('spendPerso', "number", array(
                 "label" => "Coût par personne :"))
@@ -41,7 +44,8 @@ class SpendType extends AbstractType
                 "label" => "Paiement groupé :",
                 "required" => false
             ))
-            ->add('spendPhoto')
+            ->add('phSpend', 'file', array('label' => 'Photo illustration', 'required' => false))
+//            ->add('spendPhoto')
             ->add('spendUserId')
             ->add('spendEventId');
     }

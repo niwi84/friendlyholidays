@@ -79,6 +79,17 @@ class EventController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            if($editForm->get('phEvent')->getData() != null) {
+
+                if($event->getEventPhoto1() != null) {
+                    unlink(__DIR__.'/../../../web/uploads/photosEvents/'.$event->getEventPhoto1());
+                    $soiree->setEventPhoto1(null);
+                }
+            }
+
+            $event->preUpload();
+
             $em->persist($event);
             $em->flush();
 
