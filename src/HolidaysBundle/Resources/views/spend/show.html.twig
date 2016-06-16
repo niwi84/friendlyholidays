@@ -3,10 +3,11 @@
 {% block title %}Spend Show{% endblock %}
 
 {% block body %}
-    <h1>Spend</h1>
+    <div class="container-fluid">
+        <h1>Spend</h1>
 
-    <table class="table table-hover">
-        <tbody>
+        <table class="table table-hover">
+            <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ spend.id }}</td>
@@ -35,20 +36,21 @@
                 <th>Spendphoto</th>
                 <td>{{ spend.spendPhoto }}</td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('spend_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('spend_edit', { 'id': spend.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
+        <ul>
+            <li>
+                <a href="{{ path('spend_index') }}">Back to the list</a>
+            </li>
+            <li>
+                <a href="{{ path('spend_edit', { 'id': spend.id }) }}">Edit</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
                 <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+    </div>
 {% endblock %}

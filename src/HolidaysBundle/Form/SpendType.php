@@ -31,7 +31,10 @@ class SpendType extends AbstractType
                     "Divers" => "Divers"
                 )
             ))
-            ->add('spendLibel')
+            ->add('spendLibel', 'text', array(
+                'attr' => array(
+                    'class' => 'col-sm-2 control-label')
+            ))
             ->add('spendDate', 'datetime')
             ->add('spendPerso', "number", array(
                 "label" => "Coût par personne :"))

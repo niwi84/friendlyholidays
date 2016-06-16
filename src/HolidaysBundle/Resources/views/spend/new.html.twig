@@ -3,20 +3,22 @@
 {% block title %}Spend New{% endblock %}
 
 {% block body %}
-    <h1>Spend creation</h1>
+    <div class="container-fluid">
+        <h1>Spend creation</h1>
 
-    {{ form_start(form) }}
+        {{ form_start(form) }}
 
-    {{ form_label(form.spendUserId, 'C ki ka payé ?') }}
-    {{ form_errors(form.spendUserId) }}
-    {{ form_widget(form.spendUserId) }}
+        {{ form_label(form.spendUserId, 'C ki ka payé ?') }}
+        {{ form_errors(form.spendUserId) }}
+        {{ form_widget(form.spendUserId) }}
 
-    <input style="display: block" type="submit" value="Create" />
-    {{ form_end(form) }}
+        <input style="display: block" type="submit" value="Create"/>
+        {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('spend_index') }}">Back to the list</a>
-        </li>
-    </ul>
+        <ul>
+            <li>
+                <a href="{{ path('spend_index') }}">Back to the list</a>
+            </li>
+        </ul>
+    </div>
 {% endblock %}

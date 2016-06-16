@@ -3,10 +3,11 @@
 {% block title %}Spend{% endblock %}
 
 {% block body %}
-    <h1>Spend list</h1>
+    <div class="container-fluid">
+        <h1>Spend list</h1>
 
-    <table class="table table-hover">
-        <thead>
+        <table class="table table-hover">
+            <thead>
             <tr>
                 <th>Id</th>
                 <th>Spendtype</th>
@@ -18,36 +19,37 @@
                 <th>Spendphoto</th>
                 <th>Actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for spend in spends %}
-            <tr>
-                <td><a href="{{ path('spend_show', { 'id': spend.id }) }}">{{ spend.id }}</a></td>
-                <td>{{ spend.spendType }}</td>
-                <td>{{ spend.spendLibel }}</td>
-                <td>{% if spend.spendDate %}{{ spend.spendDate|date('d-m-Y H:i:s') }}{% endif %}</td>
-                <td>{{ spend.spendPerso }}</td>
-                <td>{{ spend.spendGroup }}</td>
-                <td>{% if spend.spendGroup2 %}Yes{% else %}No{% endif %}</td>
-                <td>{{ spend.spendPhoto }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('spend_show', { 'id': spend.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('spend_edit', { 'id': spend.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for spend in spends %}
+                <tr>
+                    <td><a href="{{ path('spend_show', { 'id': spend.id }) }}">{{ spend.id }}</a></td>
+                    <td>{{ spend.spendType }}</td>
+                    <td>{{ spend.spendLibel }}</td>
+                    <td>{% if spend.spendDate %}{{ spend.spendDate|date('d-m-Y H:i:s') }}{% endif %}</td>
+                    <td>{{ spend.spendPerso }}</td>
+                    <td>{{ spend.spendGroup }}</td>
+                    <td>{% if spend.spendGroup2 %}Yes{% else %}No{% endif %}</td>
+                    <td>{{ spend.spendPhoto }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('spend_show', { 'id': spend.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('spend_edit', { 'id': spend.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('spend_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+        <ul>
+            <li>
+                <a href="{{ path('spend_new') }}">Create a new entry</a>
+            </li>
+        </ul>
+    </div>
 {% endblock %}
