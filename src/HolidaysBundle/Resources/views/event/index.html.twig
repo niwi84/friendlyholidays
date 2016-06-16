@@ -42,11 +42,6 @@
                 <td>{% if event.eventEnd %}{{ event.eventEnd|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ event.eventBudget }}</td>
                 <td>{{ event.eventComment }}</td>
-                <td>{{ event.eventPhoto1 }}</td>
-                <td>{{ event.eventPhoto2 }}</td>
-                <td>{{ event.eventPhoto3 }}</td>
-                <td>{{ event.eventPhoto4 }}</td>
-                <td>{{ event.eventPhoto5 }}</td>
                 {#<td>{{ event.eventPhoto1 }}</td>#}
                 <td><img class="image_event" src="{{ asset('uploads/photosEvents/')}}{{ event.eventPhoto1 }}"></td>
                 {#<td>{{ event.eventPhoto2 }}</td>#}

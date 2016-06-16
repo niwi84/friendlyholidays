@@ -3,6 +3,8 @@
 {% block title %}Event Show{% endblock %}
 
 {% block body %}
+<div class="container">
+
     <h1>Event</h1>
 
     <table class="table table-hover">
@@ -77,15 +79,26 @@
 
     <ul>
         <li>
-            <a href="{{ path('event_index') }}">Back to the list</a>
+            <a href="{{ path('event_index') }}" class="btn btn-default">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+                Retour à la liste
+            </a>
         </li>
         <li>
-            <a href="{{ path('event_edit', { 'id': event.id }) }}">Edit</a>
+            <a href="{{ path('event_edit', { 'id': event.id }) }}" class="btn btn-default">
+                <i class="glyphicon glyphicon-edit"></i>
+                Modifier l'annonce
+            </a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+
+                <button type="submit" class="btn btn-danger">
+                    <i class="glyphicon glyphicon-trash"></i>
+                    Supprimer l'annonce
+                </button>
             {{ form_end(delete_form) }}
         </li>
     </ul>
+</div>
 {% endblock %}
