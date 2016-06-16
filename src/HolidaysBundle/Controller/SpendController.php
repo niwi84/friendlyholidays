@@ -79,6 +79,17 @@ class SpendController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            if($editForm->get('phSpend')->getData() != null) {
+
+                if($event->getSpendPhoto() != null) {
+                    unlink(__DIR__.'/../../../web/uploads/photosSpends/'.$event->getSpendPhoto());
+                    $soiree->setSpendPhoto(null);
+                }
+            }
+
+            $spend->preUpload();
+
             $em->persist($spend);
             $em->flush();
 

@@ -44,7 +44,8 @@ class SpendType extends AbstractType
                 "label" => "Paiement groupé :",
                 "required" => false
             ))
-            ->add('spendPhoto')
+            ->add('phSpend', 'file', array('label' => 'Photo illustration', 'required' => false))
+//            ->add('spendPhoto')
             ->add('spendUserId')
             ->add('spendEventId');
     }

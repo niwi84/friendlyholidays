@@ -1,0 +1,12 @@
+# HolidaysBundle/Resources/config/validation.yml
+HolidaysBundle\Entity\Event:
+   properties:
+      # …
+      phEvent:
+         - Image: ~
+
+HolidaysBundle\Entity\Spend:
+   properties:
+      # …
+      phSpend:
+         - Image: ~

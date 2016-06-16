@@ -20,11 +20,10 @@
                 <th>Eventbudget</th>
                 <th>Eventcomment</th>
                 <th>Eventphoto1</th>
-                <th>Eventphoto2</th>
-                <th>Eventphoto3</th>
-                <th>Eventphoto4</th>
-                <th>Eventphoto5</th>
-                <th>Participants</th>
+                {#<th>Eventphoto2</th>#}
+                {#<th>Eventphoto3</th>#}
+                {#<th>Eventphoto4</th>#}
+                {#<th>Eventphoto5</th>#}
                 <th>Actions</th>
             </tr>
         </thead>
@@ -42,12 +41,12 @@
                 <td>{% if event.eventEnd %}{{ event.eventEnd|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ event.eventBudget }}</td>
                 <td>{{ event.eventComment }}</td>
-                <td>{{ event.eventPhoto1 }}</td>
-                <td>{{ event.eventPhoto2 }}</td>
-                <td>{{ event.eventPhoto3 }}</td>
-                <td>{{ event.eventPhoto4 }}</td>
-                <td>{{ event.eventPhoto5 }}</td>
-                <td>{{ event.participants|join('\n')|nl2br }}</td>
+                {#<td>{{ event.eventPhoto1 }}</td>#}
+                <td><img class="image_event" src="{{ asset('uploads/photosEvents/')}}{{ event.eventPhoto1 }}"></td>
+                {#<td>{{ event.eventPhoto2 }}</td>#}
+                {#<td>{{ event.eventPhoto3 }}</td>#}
+                {#<td>{{ event.eventPhoto4 }}</td>#}
+                {#<td>{{ event.eventPhoto5 }}</td>#}
                 <td>
                     <ul>
                         <li>

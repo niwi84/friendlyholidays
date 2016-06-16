@@ -34,7 +34,8 @@
             </tr>
             <tr>
                 <th>Spendphoto</th>
-                <td>{{ spend.spendPhoto }}</td>
+                {#<td>{{ spend.spendPhoto }}</td>#}
+                <td><img class="image_spend" src="{{ asset('uploads/photosSpends/')}}{{ spend.spendPhoto }}"></td>
             </tr>
             </tbody>
         </table>
