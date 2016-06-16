@@ -153,17 +153,12 @@ class Spend
     /**
      * @var string
      */
-    private $spendPerso;
-
-    /**
-     * @var string
-     */
-    private $spendGroup;
+    private $spendMontant;
 
     /**
      * @var bool
      */
-    private $spendGroup2;
+    private $spendGroupIndiv;
 
     /**
      * @var string
@@ -230,75 +225,51 @@ class Spend
     }
 
     /**
-     * Set spendPerso
+     * Set spendMontant
      *
-     * @param string $spendPerso
+     * @param string $spendMontant
      *
      * @return Spend
      */
-    public function setSpendPerso($spendPerso)
+    public function setSpendMontant($spendMontant)
     {
-        $this->spendPerso = $spendPerso;
+        $this->spendMontant = $spendMontant;
 
         return $this;
     }
 
     /**
-     * Get spendPerso
+     * Get spendMontant
      *
      * @return string
      */
-    public function getSpendPerso()
+    public function getSpendMontant()
     {
-        return $this->spendPerso;
+        return $this->spendMontant;
     }
-
+    
     /**
-     * Set spendGroup
+     * Set spendGroupIndiv
      *
-     * @param string $spendGroup
+     * @param boolean $spendGroupIndiv
      *
      * @return Spend
      */
-    public function setSpendGroup($spendGroup)
+    public function setSpendGroupIndiv($spendGroupIndiv)
     {
-        $this->spendGroup = $spendGroup;
+        $this->spendGroupIndiv = $spendGroupIndiv;
 
         return $this;
     }
 
     /**
-     * Get spendGroup
-     *
-     * @return string
-     */
-    public function getSpendGroup()
-    {
-        return $this->spendGroup;
-    }
-
-    /**
-     * Set spendGroup2
-     *
-     * @param boolean $spendGroup2
-     *
-     * @return Spend
-     */
-    public function setSpendGroup2($spendGroup2)
-    {
-        $this->spendGroup2 = $spendGroup2;
-
-        return $this;
-    }
-
-    /**
-     * Get spendGroup2
+     * Get spendGroupIndiv
      *
      * @return bool
      */
-    public function getSpendGroup2()
+    public function getSpendGroupIndiv()
     {
-        return $this->spendGroup2;
+        return $this->spendGroupIndiv;
     }
 
     /**

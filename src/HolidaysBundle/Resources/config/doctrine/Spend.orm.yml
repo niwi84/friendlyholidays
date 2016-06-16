@@ -20,20 +20,15 @@ HolidaysBundle\Entity\Spend:
         spendDate:
             type: datetime
             column: spend_date
-        spendPerso:
+        spendMontant:
             type: decimal
             precision: '9'
             scale: '2'
-            column: spend_perso
-        spendGroup:
-            type: decimal
-            precision: '9'
-            scale: '2'
-            column: spend_group
-        spendGroup2:
+            column: spend_montant
+        spendGroupIndiv:
             type: boolean
             nullable: true
-            column: spend_group2
+            column: spend_groupindiv
         spendPhoto:
             type: string
             length: '20'

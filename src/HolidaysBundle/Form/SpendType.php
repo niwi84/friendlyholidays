@@ -36,11 +36,9 @@ class SpendType extends AbstractType
                     'class' => 'col-sm-2 control-label')
             ))
             ->add('spendDate', 'datetime')
-            ->add('spendPerso', "number", array(
+            ->add('spendMontant', "number", array(
                 "label" => "Coût par personne :"))
-            ->add('spendGroup', "number", array(
-                "label" => "Coût global :"))
-            ->add('spendGroup2', CheckboxType::class, array(
+            ->add('spendGroupIndiv', CheckboxType::class, array(
                 "label" => "Paiement groupé :",
                 "required" => false
             ))
