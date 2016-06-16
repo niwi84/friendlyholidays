@@ -21,14 +21,14 @@ class SpendType extends AbstractType
             ->add("spendType", "choice", array(
                 "label" => "Type de sortie / dépense :",
                 "choices" => array(
-                    "Trajet aller",
-                    "Trajet retour",
-                    "Essence",
-                    "Hôtel",
-                    "Restaurant",
-                    "Achat(s)",
-                    "Sortie",
-                    "Divers"
+                    "Trajet aller" => "Trajet aller",
+                    "Trajet retour" => "Trajet retour",
+                    "Essence" => "Essence",
+                    "Hôtel" => "Hôtel",
+                    "Restaurant" => "Restaurant",
+                    "Achat(s)" => "Achat(s)",
+                    "Sortie" => "Sortie",
+                    "Divers" => "Divers"
                 )
             ))
             ->add('spendDate', 'datetime')
