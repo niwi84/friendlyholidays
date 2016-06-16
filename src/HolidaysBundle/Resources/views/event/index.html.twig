@@ -3,23 +3,31 @@
 {% block title %}Events{% endblock %}
 
 {% block body %}
-<h1>Event list</h1>
 
-    <table class="table table-hover">
-        <thead>
+        <div id="header" class="jumbotron">
+            <h1>Event list</h1>
+                <a class="btn btn-primary btn-lg" href="{{ path('event_new') }}">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    Créer une nouvelle entrée
+                </a>
+        </div>
+        <div class="container-fluid">
+
+        <table class="table table-hover">
+            <thead>
             <tr>
                 {#<th>Id</th>
                 <th>Eventetat</th>#}
-                <th>Eventlibel</th>
-                <th>Eventdescrip</th>
-                <th>eventUserId</th>
+                <th>Libellé</th>
+                <th>Description</th>
+                <th>Organisateur</th>
                 {#<th>Eventactiv</th>
                 <th>Eventdesactiv</th>#}
-                <th>Eventstart</th>
-                <th>Eventend</th>
-                <th>Eventbudget</th>
-                <th>Eventcomment</th>
-                <th>Eventphoto1</th>
+                <th>Départ</th>
+                <th>Retour</th>
+                <th>Budget Prévisionnel</th>
+                {#<th>Eventcomment</th>#}
+                <th>Photo</th>
                 <th>Participants</th>
                 {#<th>Eventphoto2</th>#}
                 {#<th>Eventphoto3</th>#}
@@ -27,46 +35,50 @@
                 {#<th>Eventphoto5</th>#}
                 <th>Actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for event in events %}
-            <tr>
-                {#<td><a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.id }}</a></td>
-                <td>{% if event.eventEtat %}Yes{% else %}No{% endif %}</td>#}
-                <td><a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.eventLibel }}</a></td>
-                <td>{{ event.eventDescrip }}</td>
-                <td>{{ event.eventUserId }}</td>
-                {#<td>{% if event.eventActiv %}{{ event.eventActiv|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if event.eventDesactiv %}{{ event.eventDesactiv|date('Y-m-d H:i:s') }}{% endif %}</td>#}
-                <td>{% if event.eventStart %}{{ event.eventStart|date('Y-m-d') }}{% endif %}</td>
-                <td>{% if event.eventEnd %}{{ event.eventEnd|date('Y-m-d') }}{% endif %}</td>
-                <td>{{ event.eventBudget }}</td>
-                <td>{{ event.eventComment }}</td>
-                {#<td>{{ event.eventPhoto1 }}</td>#}
-                <td><img class="image_event" src="{{ asset('uploads/photosEvents/')}}{{ event.eventPhoto1 }}"></td>
-                {#<td>{{ event.eventPhoto2 }}</td>
-                <td>{{ event.eventPhoto3 }}</td>
-                <td>{{ event.eventPhoto4 }}</td>
-                <td>{{ event.eventPhoto5 }}</td>#}
-                <td>{{ event.participants|join('\n')|nl2br }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('event_show', { 'id': event.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('event_edit', { 'id': event.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for event in events %}
+                <tr>
+                    {#<td><a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.id }}</a></td>
+                    <td>{% if event.eventEtat %}Yes{% else %}No{% endif %}</td>#}
+                    <td><a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.eventLibel }}</a></td>
+                    <td>{{ event.eventDescrip }}</td>
+                    <td>{{ event.eventUserId }}</td>
+                    {#<td>{% if event.eventActiv %}{{ event.eventActiv|date('d-m-Y H:i:s') }}{% endif %}</td>
+                    <td>{% if event.eventDesactiv %}{{ event.eventDesactiv|date('d-m-Y H:i:s') }}{% endif %}</td>#}
+                    <td>{% if event.eventStart %}{{ event.eventStart|date('d-m-Y') }}{% endif %}</td>
+                    <td>{% if event.eventEnd %}{{ event.eventEnd|date('d-m-Y') }}{% endif %}</td>
+                    <td>{{ event.eventBudget }}</td>
+                    {#<td>{{ event.eventComment }}</td>#}
+                    {#<td>{{ event.eventPhoto1 }}</td>#}
+                    <td><img class="image_event" src="{{ asset('uploads/photosEvents/') }}{{ event.eventPhoto1 }}"></td>
+                    {#<td>{{ event.eventPhoto2 }}</td>
+                    <td>{{ event.eventPhoto3 }}</td>
+                    <td>{{ event.eventPhoto4 }}</td>
+                    <td>{{ event.eventPhoto5 }}</td>#}
+                    <td>{{ event.participants|join('\n')|nl2br }}</td>
+                    <td>
+                        <ul class="nopuce">
+                            <li>
+                                <a href="{{ path('event_show', { 'id': event.id }) }}" class="btn btn-default"
+                                   id="place-btn">
+                                    <i class="glyphicon glyphicon-eye-open"></i>
+                                    Voir
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('event_edit', { 'id': event.id }) }}" class="btn btn-default"
+                                   id="place-btn">
+                                    <i class="glyphicon glyphicon-edit"></i>
+                                    Modifier
+                                </a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('event_new') }}">Create a new entry</a>
-        </li>
-    </ul>
 {% endblock %}

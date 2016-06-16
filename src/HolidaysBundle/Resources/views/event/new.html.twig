@@ -3,32 +3,42 @@
 {% block title %}Event New{% endblock %}
 
 {% block body %}
-    {#<div class="container-fluid point">#}
 
-    <h1 class="jumbotron">Event creation</h1>
 
-    {{ form_start(form) }}
-    <div class="row">
-        <div class="col-lg-offset-1 col-lg-11">
-            {{ form_widget(form) }}
-        </div>
+    <div id="header" class="jumbotron">
+        <h1>Event creation</h1>
+        <a class="btn btn-primary btn-lg" href="{{ path('event_index') }}">
+            <i class="glyphicon glyphicon-plus"></i>
+            Retour à la liste
+        </a>
+
     </div>
-    <ul class="nopuce">
-        <li>
-            <a href="{{ path('event_index') }}" class="btn btn-default">
-                <i class="glyphicon glyphicon-chevron-left"></i>
-                Retour à la liste
-            </a>
-        </li>
-        <li>
-            <button type="submit" class="btn btn-primary"/>
-            <i class="glyphicon glyphicon-ok"></i>
-            Ajouter
-            </button>
-        </li>
-    </ul>
-    {{ form_end(form) }}
 
-    {#</div>#}
+    <div class="container-fluid">
+        {{ form_start(form) }}
+
+        <div class="row">
+            <div class="col-lg-offset-1 col-lg-11">
+                {{ form_widget(form) }}
+                <ul class="nopuce">
+                    <li>
+                        <a href="{{ path('event_index') }}" class="btn btn-default">
+                            <i class="glyphicon glyphicon-chevron-left"></i>
+                            Retour à la liste
+                        </a>
+                    </li>
+                    <li>
+                        <button type="submit" class="btn btn-primary"/>
+                        <i class="glyphicon glyphicon-ok"></i>
+                        Ajouter
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        {{ form_end(form) }}
+
+    </div>
 
 {% endblock %}

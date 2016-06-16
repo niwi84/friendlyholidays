@@ -31,7 +31,7 @@
                 {#<td>{{ spend.spendPhoto }}</td>#}
                 <td><img class="image_spend" src="{{ asset('uploads/photosSpends/') }}{{ spend.spendPhoto }}"></td>
                 <td>
-                    <ul>
+                    <ul class="nopuce">
                         <li>
                             <a href="{{ path('spend_show', { 'id': spend.id }) }}">show</a>
                         </li>
@@ -45,7 +45,7 @@
         </tbody>
     </table>
 
-    <ul>
+    <ul class="nopuce">
         <li>
             <a href="{{ path('spend_new') }}">Create a new entry</a>
         </li>
