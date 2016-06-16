@@ -24,7 +24,7 @@ class EventType extends AbstractType
             ->add('eventStart', 'datetime')
             ->add('eventEnd', 'datetime')
             ->add('eventBudget')
-            ->add('eventComment')
+            ->add('eventComment', 'textarea', array('label' => 'Commentaire '))
             ->add('phEvent', 'file', array('label' => 'Photo illustration', 'required' => false))
 //            ->add('eventPhoto1')
 //            ->add('eventPhoto2')
