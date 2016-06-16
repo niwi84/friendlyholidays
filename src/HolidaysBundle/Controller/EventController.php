@@ -59,7 +59,34 @@ class EventController extends Controller
      */
     public function showAction(Event $event)
     {
+        $em = $this->getDoctrine()->getManager();
+        
         $deleteForm = $this->createDeleteForm($event);
+
+        $id = $event->getId();
+//        var_dump($id);exit;
+        
+        $nb_spends_event = $em->getRepository('HolidaysBundle:Spend')->getNbSpendsEvent($id);
+        $event->nbspends = $nb_spends_event;
+//        var_dump($nb_spends_event);exit;
+        
+        $spends_event = $em->getRepository('HolidaysBundle:Spend')->getSpendsEvent($id);
+//        var_dump($spends_event);exit;
+
+//        $sbe = array();
+//        foreach  ($spends_event as $sfte=>$valsfte) {
+//            foreach  ($valsfte as $tpps2=>$valsfte2) {
+//                $sbe[$sfte] = $valsfte2;
+//            }
+////            var_dump($valsfte);exit;
+//        }
+////            var_dump($sbe);exit;
+////            var_dump($spends_event);exit;
+//
+//        $event->spends = $sbe;
+////            var_dump($event);exit;
+
+        $event->spends = $spends_event;
 
         return $this->render('HolidaysBundle:event:show.html.twig', array(
             'event' => $event,
