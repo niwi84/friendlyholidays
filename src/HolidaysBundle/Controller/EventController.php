@@ -118,7 +118,9 @@ class EventController extends Controller
 //        var_dump($event);exit;
 //        $participants = $event->participants;
 //        $participants2 = $participants->association;
-        $ecot = $spendTotal_event / $nb_spendsbyki_event2;
+        $ecot = 0;
+        if ($nb_spendsbyki_event2 > 0)
+            $ecot = $spendTotal_event / $nb_spendsbyki_event2;
 
         $event->ecot = $ecot;
 
