@@ -19,14 +19,24 @@
         {{ form_label(form.spendUserId, 'C ki ka payé ?') }}
         {{ form_errors(form.spendUserId) }}
         {{ form_widget(form.spendUserId) }}
-
-        <input style="display: block" type="submit" value="Create"/>
-        {{ form_end(form) }}
+        {{ form_rest(form) }}
 
         <ul class="nopuce">
             <li>
-                <a href="{{ path('spend_index') }}">Back to the list</a>
+                <button type="submit" class="btn btn-success"/>
+                <i class="glyphicon glyphicon-ok"></i>
+                Ajouter
+                </button>
+            </li>
+
+            <li>
+                <a href="{{ path('spend_index') }}" class="btn btn-primary">
+                    <i class="glyphicon glyphicon-chevron-left"></i>
+                    Retour à la liste
+                </a>
             </li>
         </ul>
+        {{ form_end(form) }}
+
     </div>
 {% endblock %}
