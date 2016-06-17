@@ -3,12 +3,6 @@ ul{
     padding: 0;
 }
 
-ul li
-{
-    list-style-type: none;
-    margin: 0 0 10px 0;
-}
-
 label{
     display: block;
     margin: 0px;

@@ -1,4 +1,4 @@
-friendlyholidays
+FriendlyHolidays
 ================
 
 A Symfony project created on June 15, 2016, 6:19 pm.
@@ -6,7 +6,7 @@ A Symfony project created on June 15, 2016, 6:19 pm.
 ### Hackathon de la [WCS](http://www.wildcodeschool.fr) - La Loupe / Chatres / Fontainebleau ![Logo Wild Code School][logo]
 du mercredi 15 juin 2016, 14h au vendredi 17 juin 2016, 14h !
 
-#### Membres du projet :
+#### Membres de l'équipe :
 
 * Ninon Pelaez
 * Omar Mohamed
@@ -23,6 +23,9 @@ Si vous ne possédez pas tous ces pré-requis, ne passez pas à l'étape suivant
 ##### Installation de l'application :
 
 1. **Clonez** le dépôt GitHub sur votre PC
+HTTPS -> https://github.com/niwi84/friendlyholidays.git
+SSH -> git@github.com:niwi84/friendlyholidays.git
+
 > Nota : N'oubliez pas de cloner le dépôt au bon endroit.
 ```sh
 --> /var/www/html pour Linux.
@@ -31,7 +34,7 @@ Si vous ne possédez pas tous ces pré-requis, ne passez pas à l'étape suivant
 
 2. **Modifiez les droits** du fichier chmod.sh, via le terminal afin d'être sur que vous ayez tous les droits dessus (777).
 ```sh
---> sudo chmod -R 777 chmod.sh
+--> sudo chmod 777 chmod.sh
 ```
 
 3. **Executez** le script chmod.sh depuis le terminal
@@ -39,9 +42,9 @@ Si vous ne possédez pas tous ces pré-requis, ne passez pas à l'étape suivant
 --> ./chmod.sh
 ```
 
-4. **Installez** les dossiers manquants de l'application ("Vendor" et "Bin") avec Composer, en éxécutant la commande :
+4. **Installez** les dossiers manquants de l'application ("Vendor" et "Bin") avec Composer, en exécutant la commande :
 ```sh
---> composer update
+--> composer install
 ```
 
 ###### L'application est prête à l'emploi.
