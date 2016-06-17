@@ -10,25 +10,47 @@ namespace HolidaysBundle\Repository;
  */
 class SpendRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function getNbSpendsEvent($id_event)
-    {
-        return $this->getEntityManager()
-            ->createQuery('SELECT COUNT(p.id) FROM HolidaysBundle:Spend p WHERE p.spendEventId = :idEvent')
-            ->setParameter('idEvent', $id_event)
-            ->getSingleScalarResult();
-    }
+//    public function getNbSpendsEvent($id_event)
+//    {
+//        return $this->getEntityManager()
+//            ->createQuery('SELECT COUNT(p.id) FROM HolidaysBundle:Spend p WHERE p.spendEventId = :idEvent')
+//            ->setParameter('idEvent', $id_event)
+//            ->getSingleScalarResult();
+//    }
     public function getSpendsEvent($id_event)
     {
         return $this->getEntityManager()
-            ->createQuery('SELECT p.spendType, p.spendLibel, p.spendMontant, p.spendGroupIndiv, u.nomPrenom FROM HolidaysBundle:Spend p LEFT JOIN p.spendUserId u WHERE p.spendEventId = :idEvent')
+            ->createQuery('SELECT p.spendType, p.spendLibel, p.spendMontant, p.spendGroupIndiv, u.nomPrenom, p.spendDate FROM HolidaysBundle:Spend p LEFT JOIN p.spendUserId u WHERE p.spendEventId = :idEvent ORDER BY p.spendDate ASC')
             ->setParameter('idEvent', $id_event)
             ->getResult();
     }
+//    public function getNbSpendsByKiEvent($id_event)
+//    {
+//        return $this->getEntityManager()
+//            ->createQuery('SELECT COUNT(p.id) FROM HolidaysBundle:Spend p LEFT JOIN p.spendUserId u WHERE (p.spendEventId = :idEvent AND p.spendGroupIndiv = :groupir AND p.spendMontant > :Mt) GROUP BY u.nomPrenom ORDER BY u.nomPrenom ASC')
+//            ->setParameter('idEvent', $id_event)
+//            ->setParameter('groupir', 1)
+//            ->setParameter('Mt', 0)
+//            ->getSingleScalarResult();
+//    }
     public function getSpendsByKiEvent($id_event)
     {
         return $this->getEntityManager()
-            ->createQuery('SELECT p.spendType, p.spendLibel, p.spendMontant, p.spendGroupIndiv, u.nomPrenom FROM HolidaysBundle:Spend p LEFT JOIN p.spendUserId u WHERE p.spendEventId = :idEvent')
+            ->createQuery('SELECT u.nomPrenom, SUM(p.spendMontant) AS SpendsTotalKi FROM HolidaysBundle:Spend p LEFT JOIN p.spendUserId u WHERE (p.spendEventId = :idEvent AND p.spendGroupIndiv = :groupir AND p.spendMontant > :Mt) GROUP BY u.nomPrenom ORDER BY u.nomPrenom ASC')
             ->setParameter('idEvent', $id_event)
+            ->setParameter('groupir', 1)
+            ->setParameter('Mt', 0)
             ->getResult();
     }
+    public function getSpendsTotalEvent($id_event)
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT SUM(p.spendMontant) AS SpendsTotalEvent FROM HolidaysBundle:Spend p WHERE (p.spendEventId = :idEvent AND p.spendGroupIndiv = :groupir AND p.spendMontant > :Mt)')
+            ->setParameter('idEvent', $id_event)
+            ->setParameter('groupir', 1)
+            ->setParameter('Mt', 0)
+//            ->getOneOrNullResult();
+            ->getSingleScalarResult();
+    }
+//SELECT SUM(Quantity) AS TotalItemsOrdered FROM OrderDetails;
 }

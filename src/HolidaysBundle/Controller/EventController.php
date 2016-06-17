@@ -66,9 +66,10 @@ class EventController extends Controller
         $id = $event->getId();
 //        var_dump($id);exit;
         
-        $nb_spends_event = $em->getRepository('HolidaysBundle:Spend')->getNbSpendsEvent($id);
-        $event->nbspends = $nb_spends_event;
+//        $nb_spends_event = $em->getRepository('HolidaysBundle:Spend')->getNbSpendsEvent($id);
+//        $event->nbspends = $nb_spends_event;
 //        var_dump($nb_spends_event);exit;
+
         
         $spends_event = $em->getRepository('HolidaysBundle:Spend')->getSpendsEvent($id);
 //        var_dump($spends_event);exit;
@@ -87,6 +88,40 @@ class EventController extends Controller
 ////            var_dump($event);exit;
 
         $event->spends = $spends_event;
+        
+        $nb_spends_event2 = count($spends_event);
+//        var_dump($nb_spends_event2);exit;
+        $event->nbspends = $nb_spends_event2;
+
+
+//        $nb_spendsbyki_event = $em->getRepository('HolidaysBundle:Spend')->getNbSpendsByKiEvent($id);
+//        $event->nbspendsbyki = $nb_spendsbyki_event;
+//        var_dump($nb_spendsbyki_event);exit;
+        
+        
+        $spendsbyki_event = $em->getRepository('HolidaysBundle:Spend')->getSpendsByKiEvent($id);
+//        var_dump($spendsbyki_event);exit;
+
+        $event->spendsbyki = $spendsbyki_event;
+
+        $nb_spendsbyki_event2 = count($spendsbyki_event);
+//        var_dump($nb_spends_event2);exit;
+        $event->nbspendsbyki = $nb_spendsbyki_event2;
+
+
+        $spendTotal_event = $em->getRepository('HolidaysBundle:Spend')->getSpendsTotalEvent($id);
+//        var_dump($spendTotal_event);exit;
+
+        $event->spendTotal = $spendTotal_event;
+
+
+//        var_dump($event);exit;
+//        $participants = $event->participants;
+//        $participants2 = $participants->association;
+        $ecot = $spendTotal_event / $nb_spendsbyki_event2;
+
+        $event->ecot = $ecot;
+        
 
         return $this->render('HolidaysBundle:event:show.html.twig', array(
             'event' => $event,
