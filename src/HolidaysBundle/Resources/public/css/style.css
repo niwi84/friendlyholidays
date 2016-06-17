@@ -33,6 +33,10 @@ input, select, textarea,#event_eventEtat{
     margin-top: 30px;
 }
 
+.btn-primary{
+    margin-top: 25px;
+}
+
 .point{
     display: inline-block;
 }
