@@ -7,7 +7,7 @@
     <div id="header" class="jumbotron">
         <h1>EventShow</h1>
         <a class="btn btn-primary btn-lg" href="{{ path('event_index') }}">
-            <i class="glyphicon glyphicon-plus"></i>
+            <i class="glyphicon glyphicon-chevron-left"></i>
             Retour à la liste
         </a>
 
@@ -92,13 +92,7 @@
             <div class="col-lg-4">
                 <ul class="nopuce">
                     <li>
-                        <a href="{{ path('event_index') }}" class="btn btn-default">
-                            <i class="glyphicon glyphicon-chevron-left"></i>
-                            Retour à la liste
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ path('event_edit', { 'id': event.id }) }}" class="btn btn-primary">
+                        <a href="{{ path('event_edit', { 'id': event.id }) }}" class="btn btn-success">
                             <i class="glyphicon glyphicon-edit"></i>
                             Modifier l'annonce
                         </a>

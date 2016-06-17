@@ -5,10 +5,10 @@
 {% block body %}
 
     <div id="header" class="jumbotron">
-        <h1>Spend list</h1>
-        <a class="btn btn-primary btn-lg" href="{{ path('spend_new') }}">
+        <h1>Liste des Sorties/Dépenses</h1>
+        <a class="btn btn-success btn-lg" href="{{ path('spend_new') }}">
             <i class="glyphicon glyphicon-plus"></i>
-            Create a new entry
+            Créer une nouvelle entrée
         </a>
     </div>
 
@@ -18,12 +18,12 @@
             <thead>
             <tr>
                 {#<th>Id</th>#}
-                <th>Spendlibel</th>
-                <th>Spendtype</th>
-                <th>Spenddate</th>
-                <th>Spendmontant</th>
-                <th>Spendgroupindiv</th>
-                <th>Spendphoto</th>
+                <th>Libellé</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Montant</th>
+                <th>Paiement groupé</th>
+                <th>Photo</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -33,7 +33,7 @@
                     {#<td><a href="{{ path('spend_show', { 'id': spend.id }) }}">{{ spend.id }}</a></td>#}
                     <td><a href="{{ path('spend_show', { 'id': spend.id }) }}">{{ spend.spendLibel }}</a></td>
                     <td>{{ spend.spendType }}</td>
-                    <td>{% if spend.spendDate %}{{ spend.spendDate|date('d-m-Y\nH:i:s')|nl2br }}{% endif %}</td>
+                    <td>{% if spend.spendDate %}{{ spend.spendDate|date('d-m-Y')|nl2br }}{% endif %}</td>
                     <td>{{ spend.spendMontant }}</td>
                     <td>{% if spend.spendGroupIndiv %}Oui{% else %}Non{% endif %}</td>
                     {#<td>{{ spend.spendPhoto }}</td>#}
@@ -41,10 +41,18 @@
                     <td>
                         <ul class="nopuce">
                             <li>
-                                <a href="{{ path('spend_show', { 'id': spend.id }) }}">show</a>
+                                <a href="{{ path('spend_show', { 'id': spend.id }) }}" class="btn btn-primary"
+                                   id="place-btn">
+                                    <i class="glyphicon glyphicon-eye-open"></i>
+                                    Voir
+                                </a>
                             </li>
                             <li>
-                                <a href="{{ path('spend_edit', { 'id': spend.id }) }}">edit</a>
+                                <a href="{{ path('spend_edit', { 'id': spend.id }) }}" class="btn btn-primary"
+                                   id="place-btn">
+                                    <i class="glyphicon glyphicon-edit"></i>
+                                    Modifier
+                                </a>
                             </li>
                         </ul>
                     </td>

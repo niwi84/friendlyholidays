@@ -6,7 +6,7 @@
     <div id="header" class="jumbotron">
         <h1>Event edit</h1>
         <a class="btn btn-primary btn-lg" href="{{ path('event_index') }}">
-            <i class="glyphicon glyphicon-plus"></i>
+            <i class="glyphicon glyphicon-chevron-left"></i>
             Retour à la liste
         </a>
 
@@ -23,17 +23,17 @@
 
         <div class="row">
             <div class="col-lg-offset-1 col-lg-11">
-                <ul class="nopuce">
+                <ul class="">
                     <li>
-                        <a href="{{ path('event_index') }}" class="btn btn-default">
+                        <a href="{{ path('event_index') }}" class="btn btn-primary">
                             <i class="glyphicon glyphicon-chevron-left"></i>
                             Retour à la liste
                         </a>
                     </li>
                     <li>
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-success">
                             <i class="glyphicon glyphicon-edit"></i>
-                            Modifier l'annonce
+                            Valider l'annonce
                         </button>
                     </li>
                     <li>

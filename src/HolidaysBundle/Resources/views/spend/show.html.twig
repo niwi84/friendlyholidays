@@ -6,9 +6,9 @@
 
 
     <div id="header" class="jumbotron">
-        <h1>SpendShow</h1>
+        <h1>Dépense/Sortie</h1>
         <a class="btn btn-primary btn-lg" href="{{ path('spend_index') }}">
-            <i class="glyphicon glyphicon-plus"></i>
+            <i class="glyphicon glyphicon-chevron-left"></i>
             Retour à la liste
         </a>
 
@@ -20,28 +20,28 @@
 
                 <table class="table table-hover">
                     <tbody>
-                    <tr>
+                    {#<tr>
                         <th>Id</th>
                         <td>{{ spend.id }}</td>
-                    </tr>
+                    </tr>#}
                     <tr>
-                        <th>Spendtype</th>
+                        <th>Type</th>
                         <td>{{ spend.spendType }}</td>
                     </tr>
                     <tr>
-                        <th>Spenddate</th>
-                        <td>{% if spend.spendDate %}{{ spend.spendDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                        <th>Date</th>
+                        <td>{% if spend.spendDate %}{{ spend.spendDate|date('m-d-Y') }}{% endif %}</td>
                     </tr>
                     <tr>
-                        <th>Spendmontant</th>
+                        <th>Montant des dépenses</th>
                         <td>{{ spend.spendMontant }}</td>
                     </tr>
                     <tr>
-                        <th>Spendgroupindiv</th>
-                        <td>{% if spend.spendGroupIndiv %}Yes{% else %}No{% endif %}</td>
+                        <th>Paiement groupé</th>
+                        <td>{% if spend.spendGroupIndiv %}Oui{% else %}Non{% endif %}</td>
                     </tr>
                     <tr>
-                        <th>Spendphoto</th>
+                        <th>Photo</th>
                         {#<td>{{ spend.spendPhoto }}</td>#}
                         <td><img class="image_spend" src="{{ asset('uploads/photosSpends/') }}{{ spend.spendPhoto }}">
                         </td>
@@ -52,14 +52,17 @@
                 <div class="col-lg-4">
                     <ul class="nopuce">
                         <li>
-                            <a href="{{ path('spend_index') }}">Back to the list</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('spend_edit', { 'id': spend.id }) }}">Edit</a>
+                            <a href="{{ path('spend_edit', { 'id': spend.id }) }}" class="btn btn-success">
+                                <i class="glyphicon glyphicon-edit"></i>
+                                Modifier l'annonce
+                            </a>
                         </li>
                         <li>
                             {{ form_start(delete_form) }}
-                            <input type="submit" value="Delete">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="glyphicon glyphicon-trash"></i>
+                                Supprimer l'annonce
+                            </button>
                             {{ form_end(delete_form) }}
                         </li>
                     </ul>

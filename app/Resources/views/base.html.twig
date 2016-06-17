@@ -66,10 +66,10 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li {% if app.request.get('_route') == 'event_index' %} class="active" {% endif %}>
-                        <a href="{{ path ('event_index') }}">event</a>
+                        <a href="{{ path ('event_index') }}">Evènements</a>
                     </li>
                     <li {% if app.request.get('_route') == 'spend_index' %} class="active" {% endif %}>
-                        <a href="{{ path ('spend_index') }}">spend</a>
+                        <a href="{{ path ('spend_index') }}">Dépenses</a>
                     </li>
 
 
