@@ -19,7 +19,6 @@
                 {{ form_widget(edit_form) }}
             </div>
         </div>
-        {{ form_end(edit_form) }}
 
         <div class="row">
             <div class="col-lg-offset-1 col-lg-11">
@@ -31,11 +30,12 @@
                         </a>
                     </li>
                     <li>
-                        <button type="submit" class="btn btn-success">
+                    <button type="submit" class="btn btn-success">
                             <i class="glyphicon glyphicon-edit"></i>
                             Valider l'annonce
                         </button>
-                    </li>
+                                   </li>
+                    {{ form_end(edit_form) }}
                     <li>
                         {{ form_start(delete_form) }}
                         <button type="submit" class="btn btn-danger">
