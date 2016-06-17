@@ -3,8 +3,7 @@ friendlyholidays
 
 A Symfony project created on June 15, 2016, 6:19 pm.
 
-### Projet réalisé par la [WCS](http://www.wildcodeschool.fr) ![Logo Wild Code School][logo]
-#### Hackathon La Loupe / Chatres / Fontainebleau
+### Hackathon de la [WCS](http://www.wildcodeschool.fr) - La Loupe / Chatres / Fontainebleau ![Logo Wild Code School][logo]
 du mercredi 15 juin 2016, 14h au vendredi 17 juin 2016, 14h !
 
 #### Membres du projet :
