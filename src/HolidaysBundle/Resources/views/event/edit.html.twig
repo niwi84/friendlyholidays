@@ -15,13 +15,21 @@
     <div class="container-fluid">
         {{ form_start(edit_form) }}
         <div class="row">
-            <div class="col-lg-offset-1 col-lg-11">
+            <div class="col-lg-8">
                 {{ form_widget(edit_form) }}
-            </div>
-        </div>
+                <ul class="">
+                    <li>
+                        <button type="submit" class="btn btn-success">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            Valider l'annonce
+                        </button>
+                    </li>
+                </ul>
 
-        <div class="row">
-            <div class="col-lg-offset-1 col-lg-11">
+            </div>
+            {{ form_end(edit_form) }}
+
+            <div class="col-lg-4">
                 <ul class="">
                     <li>
                         <a href="{{ path('event_index') }}" class="btn btn-primary">
@@ -29,13 +37,6 @@
                             Retour à la liste
                         </a>
                     </li>
-                    <li>
-                    <button type="submit" class="btn btn-success">
-                            <i class="glyphicon glyphicon-edit"></i>
-                            Valider l'annonce
-                        </button>
-                                   </li>
-                    {{ form_end(edit_form) }}
                     <li>
                         {{ form_start(delete_form) }}
                         <button type="submit" class="btn btn-danger">
