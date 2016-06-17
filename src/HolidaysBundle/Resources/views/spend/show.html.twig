@@ -11,7 +11,7 @@
             <i class="glyphicon glyphicon-chevron-left"></i>
             Retour à la liste
         </a>
-     </div>
+    </div>
 
     <div class="container-fluid">
         <div class="row">
@@ -47,25 +47,25 @@
                     </tr>
                     </tbody>
                 </table>
+            </div>
 
-                <div class="col-lg-4">
-                    <ul class="nopuce">
-                        <li>
-                            <a href="{{ path('spend_edit', { 'id': spend.id }) }}" class="btn btn-success">
-                                <i class="glyphicon glyphicon-edit"></i>
-                                Modifier l'annonce
-                            </a>
-                        </li>
-                        <li>
-                            {{ form_start(delete_form) }}
-                            <button type="submit" class="btn btn-danger">
-                                <i class="glyphicon glyphicon-trash"></i>
-                                Supprimer l'annonce
-                            </button>
-                            {{ form_end(delete_form) }}
-                        </li>
-                    </ul>
-                </div>
+            <div class="col-lg-4">
+                <ul class="nopuce">
+                    <li>
+                        <a href="{{ path('spend_edit', { 'id': spend.id }) }}" class="btn btn-success">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            Modifier l'annonce
+                        </a>
+                    </li>
+                    <li>
+                        {{ form_start(delete_form) }}
+                        <button type="submit" class="btn btn-danger">
+                            <i class="glyphicon glyphicon-trash"></i>
+                            Supprimer l'annonce
+                        </button>
+                        {{ form_end(delete_form) }}
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

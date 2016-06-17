@@ -9,6 +9,7 @@ ul {
 }
 
 .col-lg-4 ul li,
+.col-lg-8 ul li,
 .col-lg-offset-1.col-lg-11 ul li,
 ul.nopuce li {
     list-style-type: none;
