@@ -188,7 +188,7 @@
 
 /* Button on photostack container */
 .js .photostack::after {
-	content: 'FriendlyHolidays';
+	content: 'FRIENDLY HOLIDAYS';
 	font-weight: 400;
 	position: absolute;
 	border: 3px solid #fff;
