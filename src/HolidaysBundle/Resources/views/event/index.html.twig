@@ -48,7 +48,7 @@
                     <td>{% if event.eventDesactiv %}{{ event.eventDesactiv|date('d-m-Y H:i:s') }}{% endif %}</td>#}
                     <td>{% if event.eventStart %}{{ event.eventStart|date('d-m-Y') }}{% endif %}</td>
                     <td>{% if event.eventEnd %}{{ event.eventEnd|date('d-m-Y') }}{% endif %}</td>
-                    <td>{{ event.eventBudget }}</td>
+                    <td>{{ event.eventBudget|number_format(2, ',', ' ') }} €</td>
                     {#<td>{{ event.eventComment }}</td>#}
                     {#<td>{{ event.eventPhoto1 }}</td>#}
                     <td><img class="image_event" src="{{ asset('uploads/photosEvents/') }}{{ event.eventPhoto1 }}"></td>
