@@ -58,3 +58,7 @@ label {
 #place-btn {
     margin-top: 15px;
 }
+
+.jumbotron h1 {
+    margin: initial;
+}
